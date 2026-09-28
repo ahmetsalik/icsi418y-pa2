@@ -21,7 +21,12 @@ function Login() {
             });
 
             const data = await response.json();
-            setMessage(data.message);
+
+            if (response.ok) {
+                setMessage(data.message);
+            } else {
+                setMessage(data.message);
+            }
         } catch (error) {
             setMessage("Could not connect to server");
         }
