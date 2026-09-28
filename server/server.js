@@ -30,4 +30,14 @@ app.get("/", (req, res) => {
     });
 });
 
+app.post("/signup", (req, res) => {
+    const { username, password } = req.body;
+
+    console.log("Signup received:", username, password);
+
+    res.status(200).json({
+        message: "Signup request received"
+    });
+});
+
 startServer();
