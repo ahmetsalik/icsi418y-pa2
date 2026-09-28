@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Signup() {
+function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -9,7 +9,7 @@ function Signup() {
         event.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:9000/signup", {
+            const response = await fetch("http://localhost:9000/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -29,7 +29,7 @@ function Signup() {
 
     return (
         <div>
-            <h2>Sign Up</h2>
+            <h2>Login</h2>
 
             <form onSubmit={handleSubmit}>
                 <input
@@ -46,7 +46,7 @@ function Signup() {
                     onChange={(event) => setPassword(event.target.value)}
                 />
 
-                <button type="submit">Sign Up</button>
+                <button type="submit">Login</button>
             </form>
 
             {message && <p>{message}</p>}
@@ -54,4 +54,4 @@ function Signup() {
     );
 }
 
-export default Signup;
+export default Login;
